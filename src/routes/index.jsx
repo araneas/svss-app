@@ -1,10 +1,20 @@
 import { Outlet, Link } from "react-router-dom";
+import Container from '@mui/material/Container';
+import CssBaseline from '@mui/material/CssBaseline';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 
 export default function Index() {
   return (
-    <div className="page">
-      <header className="app-header">
-        <div className="logo"></div>
+    <>
+    <CssBaseline />
+    <Container maxWidth="lg">
+      <Box sx={{ height: '100vh' }}>
+        <Grid container spacing={2} className="header">
+          <Grid item xs={2} className="logo">
+            <img src="https://www.football-data.org/assets/logo.jpg" alt="" />
+          </Grid>
+          <Grid item xs={10} className="navigation">
         <nav className="navigation">
           <ul>
             <li>
@@ -15,10 +25,14 @@ export default function Index() {
             </li>
           </ul>
         </nav>
-      </header>
+        </Grid>
+        </Grid>
+
       <main>
         <Outlet />
       </main>
-    </div>
+      </Box>
+    </Container>
+    </>
   );
 }
