@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 export default function Competitions() {
+  // указываем переменную в которую будет записываться состояние 
+  // указываем метод с помощью которого будем обновлять состояние
   const [competitions, setCompetitions] = useState();
   const [count, setCount] = useState();
 
