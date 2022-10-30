@@ -58,7 +58,8 @@ export default function Competitions() {
       {competitionsPaged.map(item => (
         <Grid key={item.id} item xs={12} sm={6} md={4}>
           <Card variant="outlined">
-            <CompetitionCard competition={item} /></Card>
+            <CompetitionCard competition={item} />
+          </Card>
         </Grid>
       ))}
 
