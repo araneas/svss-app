@@ -25,7 +25,7 @@ export default function Teams() {
   useEffect(() => {
     fetch('http://api.football-data.org/v2/teams/', {
       headers: {
-        'X-Auth-Token': '0eccb0bb82dc4fe9a57bc5d7b257fdc1',
+        'X-Auth-Token': '41a08e4eeaf8433abcc9bac537ac1fe0',
       },
       mode: 'cors',
     })

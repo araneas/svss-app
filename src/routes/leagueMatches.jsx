@@ -27,7 +27,7 @@ export async function loader({ params }) {
   return params;
 }
 
-const ITEMS_PER_PAGE = 10;
+const itemsOnPage = 8;
 
 export default function LeagueMatches() {
   const { competitionId } = useLoaderData();
@@ -40,9 +40,9 @@ export default function LeagueMatches() {
   const [error, setError] = useState(false);
 
   const count = matches.length;
-  const numPages = Math.round(count / ITEMS_PER_PAGE);
-  const matchesPagedListStart = (currentPage - 1) * ITEMS_PER_PAGE;
-  const matchesPaged = matches.slice(matchesPagedListStart, matchesPagedListStart + ITEMS_PER_PAGE);
+  const numPages = Math.round(count / itemsOnPage);
+  const matchesPagedListStart = (currentPage - 1) * itemsOnPage;
+  const matchesPaged = matches.slice(matchesPagedListStart, matchesPagedListStart + itemsOnPage);
 
   const handleChange = (event, value) => {
     setCurrentPage(value);
@@ -57,7 +57,7 @@ export default function LeagueMatches() {
 
     fetch(`https://api.football-data.org/v2/competitions/${competitionId}/matches?${query}`, {
       headers: {
-        'X-Auth-Token': '0eccb0bb82dc4fe9a57bc5d7b257fdc1',
+        'X-Auth-Token': '41a08e4eeaf8433abcc9bac537ac1fe0',
       },
       mode: 'cors',
     })
@@ -100,7 +100,7 @@ export default function LeagueMatches() {
         </Grid>
       ) : null}
       <Grid item xs={12}>
-        <Link to="/">Лиги</Link> > <span>{competition.name}</span>
+        <Link to="/">Лиги</Link> <span>{competition.name}</span>
       </Grid>
 
       <Grid item xs={12}>

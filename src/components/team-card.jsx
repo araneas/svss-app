@@ -19,7 +19,7 @@ export const TeamCard = ({ team}) => (
       </Typography>
     </CardContent>
     <CardActions>
-      <Link to={`/teams/${team.id}/matches-teams`}>
+      <Link to={`/teams/${team.id}/matches`}>
         <Typography color="primary">
           Подробнее
         </Typography>
