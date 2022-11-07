@@ -4,8 +4,8 @@ import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Pagination from "@mui/material/Pagination";
 import TextField from "@mui/material/TextField";
-import Icon from '@mui/material/Icon';
-import CircularProgress from '@mui/material/CircularProgress';
+import Icon from "@mui/material/Icon";
+import CircularProgress from "@mui/material/CircularProgress";
 
 import { CompetitionCard } from "../components/competition-card";
 
@@ -61,20 +61,16 @@ export default function Competitions() {
   }, []);
 
   if (error) {
-  return (
-    <Grid container spacing={2} sx={{ pt: 5, pb: 5 }}>
-      <Grid item xs={12}>
-          <Icon sx={{ position: 'absolute', left: '50%', top: '50%', zIndex: 9, color: 'red', fontSize: '50px !important' }}>error</Icon>
-        </Grid>
-      </Grid>
-    );
+    return <Icon />;
   }
 
   return (
     <Grid container spacing={2} sx={{ pt: 5, pb: 5 }}>
       {loading ? (
         <Grid item xs={12}>
-          <CircularProgress sx={{ position: 'absolute', left: '50%', top: '50%', zIndex: 9 }} />
+          <CircularProgress
+            sx={{ position: "absolute", left: "50%", top: "50%", zIndex: 9 }}
+          />
         </Grid>
       ) : null}
       <Grid item xs={12}>

@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
+import Avatar from "@mui/material/Avatar";
 
 function LinkTab(props) {
   return <Tab component={Link} {...props} />;
@@ -19,29 +20,42 @@ export default function Index() {
 
   return (
     <>
-          <link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/icon?family=Material+Icons"
-/>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      />
+
       <CssBaseline />
+      <Box sx={{ bgcolor: "warning.main" }}>
+        <Grid container spacing={2} className="header">
+          <Grid item xs={1} margin="10px">
+            <Avatar alt="" src="/ball.jpg" />
+          </Grid>
+          <Grid item xs={10} className="navigation">
+            <nav className="navigation">
+              <Tabs
+                value={value}
+                onChange={handleChange}
+                aria-label="nav tabs example"
+              >
+                <LinkTab
+                  sx={{ color: "text.main", fontSize: 20, fontWeight: "bold" }}
+                  label="Лиги"
+                  to={"/"}
+                />
+                <LinkTab
+                  sx={{ color: "text.main", fontSize: 20, fontWeight: "bold" }}
+                  label="Команды"
+                  to={"/teams"}
+                />
+              </Tabs>
+            </nav>
+          </Grid>
+        </Grid>
+      </Box>
+
       <Container maxWidth="lg">
         <Box sx={{ height: "100vh" }}>
-          <Grid container spacing={2} className="header">
-            <Grid item xs={1} className="logo">
-              <img src="https://www.football-data.org/assets/logo.jpg" alt="" />
-            </Grid>
-            <Grid item xs={10} className="navigation">
-              <nav className="navigation">
-                <Tabs
-                  value={value}
-                  onChange={handleChange}
-                  aria-label="nav tabs example">
-                  <LinkTab label="Лиги" to={"/"} />
-                  <LinkTab label="Команды" to={"/teams"} />
-                </Tabs>
-              </nav>
-            </Grid>
-          </Grid>
           <main>
             <Outlet />
           </main>

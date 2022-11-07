@@ -2,11 +2,6 @@
   align-items: flex-end;
 }
 
-.logo img {
-  width: 100%;
-  display: block;
-}
-
 .country-info-wrapper {
   display: flex;
   align-items: center;
